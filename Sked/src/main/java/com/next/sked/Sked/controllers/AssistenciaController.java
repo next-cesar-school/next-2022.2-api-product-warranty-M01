@@ -25,5 +25,5 @@ public class AssistenciaController {
     public ResponseEntity<List<Assistencia>> getAllAgendamentos(){
         return ResponseEntity.status(HttpStatus.OK).body(assistenciaService.findAll());
     }
-    
+     
 }
