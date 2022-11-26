@@ -23,7 +23,7 @@ public class AssistenciaController {
 
     final AssistenciaService assistenciaService;
     @Autowired
-    AssistenciaRepository assistenciaRepository;
+    private AssistenciaRepository assistenciaRepository;
 
     public AssistenciaController(AssistenciaService assistenciaService) {
         this.assistenciaService = assistenciaService;
@@ -39,4 +39,6 @@ public class AssistenciaController {
     	assistenciaRepository.save(assistencia);
     	return assistencia;
     }
+
+    
 }
