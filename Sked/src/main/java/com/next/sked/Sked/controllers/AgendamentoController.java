@@ -1,5 +1,6 @@
 package com.next.sked.Sked.controllers;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,5 +32,5 @@ public class AgendamentoController {
 	  return solicitacaoAgendametnoService.solicitar(agendamento);
   }
   	
-  	
+  
 }
