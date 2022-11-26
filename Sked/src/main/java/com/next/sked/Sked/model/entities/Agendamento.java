@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Agendamento {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nomeDoCliente;
 	private String dataHora;
