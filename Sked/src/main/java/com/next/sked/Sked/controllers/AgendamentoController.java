@@ -1,26 +1,36 @@
 package com.next.sked.Sked.controllers;
 
-import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.next.sked.Sked.model.entities.Agendamento;
-import com.next.sked.Sked.repositories.AgendamentoRepository;
+import com.next.sked.Sked.services.SolicitacaoAgendametnoService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
+@RequestMapping("/agendamento")
 public class AgendamentoController {
-
-    @Autowired
-	private AgendamentoRepository agendamentoRepository;
     
-    @PostMapping("/agendamento")
-    public @ResponseBody Agendamento cadastrarAgendamento(@Valid Agendamento agendamento){
-        agendamentoRepository.save(agendamento);
-        return agendamento;
-    }
-
-
+  private SolicitacaoAgendametnoService solicitacaoAgendametnoService;
+	
+	
+//	@PostMapping
+//	public Agendamento cadastrar(@RequestBody Agendamento obj) {
+//		return agendamentoRepository.save(obj);
+//	}
+  	
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  public Agendamento solicitar(@RequestBody Agendamento agendamento) {
+	  return solicitacaoAgendametnoService.solicitar(agendamento);
+  }
+  	
+  
 }

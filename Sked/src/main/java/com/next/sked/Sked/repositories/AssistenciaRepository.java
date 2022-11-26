@@ -7,5 +7,9 @@ import com.next.sked.Sked.model.entities.Assistencia;
 
 @Repository
 public interface AssistenciaRepository extends JpaRepository<Assistencia, Integer> {
-    
+
+	Object findByNomeContainingIgnoreCase(String nome);
+
+	Assistencia findAllById(int id);
+
 }
