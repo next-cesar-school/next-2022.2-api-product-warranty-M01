@@ -10,4 +10,6 @@ public interface AssistenciaRepository extends JpaRepository<Assistencia, Intege
 
 	Object findByNomeContainingIgnoreCase(String nome);
 
+	Assistencia findAllById(int id);
+
 }
