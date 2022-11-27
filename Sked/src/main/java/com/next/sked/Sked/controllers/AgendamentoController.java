@@ -19,12 +19,6 @@ import lombok.AllArgsConstructor;
 public class AgendamentoController {
     
   private SolicitacaoAgendametnoService solicitacaoAgendametnoService;
-	
-	
-//	@PostMapping
-//	public Agendamento cadastrar(@RequestBody Agendamento obj) {
-//		return agendamentoRepository.save(obj);
-//	}
   	
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
