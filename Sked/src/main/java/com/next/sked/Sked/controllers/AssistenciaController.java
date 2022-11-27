@@ -30,7 +30,7 @@ public class AssistenciaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Assistencia>> getAllAgendamentos(){
+    public ResponseEntity<List<Assistencia>> getAllAssistencias(){
         return ResponseEntity.status(HttpStatus.OK).body(assistenciaService.findAll());
     }
     
