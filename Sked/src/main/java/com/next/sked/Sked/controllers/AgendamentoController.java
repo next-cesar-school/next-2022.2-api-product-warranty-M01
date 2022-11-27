@@ -1,9 +1,12 @@
 package com.next.sked.Sked.controllers;
 
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +28,16 @@ public class AgendamentoController {
   private SolicitacaoAgendametnoService solicitacaoAgendametnoService;
   private AgendamentoRepository agendamentoRepository;
   	
+  @GetMapping
+  public List<Agendamento> listar(){
+	  return (List<Agendamento>) agendamentoRepository.findAll();
+  }
+  
+  @GetMapping("/{data}")
+  public List<Agendamento> buscarPorData(@PathVariable String data){
+	  return agendamentoRepository.findByDataHoraContainingIgnoreCase(data);
+  }
+  
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public Agendamento solicitar(@RequestBody Agendamento agendamento) {

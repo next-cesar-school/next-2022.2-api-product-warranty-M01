@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Columns;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
