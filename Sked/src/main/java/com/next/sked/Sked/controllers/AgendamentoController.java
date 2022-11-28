@@ -35,7 +35,7 @@ public class AgendamentoController {
   
   @GetMapping("/{data}")
   public List<Agendamento> buscarPorData(@PathVariable String data){
-	  return agendamentoRepository.findByDataHoraContainingIgnoreCase(data);
+	  return agendamentoRepository.findByDataContainingIgnoreCase(data);
   }
   
   @GetMapping("/buscarNome/{nome}")

@@ -4,10 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.Columns;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +25,8 @@ public class Agendamento {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nomeDoCliente;
-	private String dataHora;
+	private String data;
+	private String hora;
 	private String aparelho;
 
 	@ManyToOne

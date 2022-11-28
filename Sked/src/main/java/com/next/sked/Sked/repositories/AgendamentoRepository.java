@@ -11,6 +11,7 @@ import com.next.sked.Sked.model.entities.Agendamento;
 @Repository
 public interface AgendamentoRepository extends PagingAndSortingRepository<Agendamento, Integer> {
 	
-	public List<Agendamento> findByDataHoraContainingIgnoreCase(String data);
+	public List<Agendamento> findByDataContainingIgnoreCase(String data);
+	public List<Agendamento> findByHoraContainingIgnoreCase(String hora);
 	public List<Agendamento> findByNomeDoClienteContainingIgnoreCase(String nome);
 }
