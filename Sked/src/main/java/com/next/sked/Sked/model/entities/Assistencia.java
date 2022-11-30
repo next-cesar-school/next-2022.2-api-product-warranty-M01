@@ -22,9 +22,13 @@ public class Assistencia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@NotEmpty(message = "informe um nome para a assistencia")
+
+	@NotEmpty(message = "informe um nome para a assistência")
 	@Size(max = 60)
 	private String nome;
 
+	@NotEmpty(message = "informe o endereço da assistência")
+	@Size(max = 200)
+	private String endereço;
+	
 }
