@@ -13,4 +13,6 @@ public interface AgendamentoRepository extends PagingAndSortingRepository<Agenda
 	
 	public List<Agendamento> findByDataContainingIgnoreCase(String data);
 	public List<Agendamento> findByHoraContainingIgnoreCase(String hora);
+	public List<Agendamento> findById(Agendamento id);
+	
 }

@@ -27,6 +27,7 @@ public class AgendamentoController {
     
   private SolicitacaoAgendametnoService solicitacaoAgendametnoService;
   private AgendamentoRepository agendamentoRepository;
+ 
   	
   @GetMapping
   public List<Agendamento> listar(){
@@ -37,11 +38,6 @@ public class AgendamentoController {
   public List<Agendamento> buscarPorData(@PathVariable String data){
 	  return agendamentoRepository.findByDataContainingIgnoreCase(data);
   }
-  
-//  @GetMapping("/buscarNome/{nome}")
-//  public List<Agendamento> buscarPorNome(@PathVariable String nome){
-//	  return agendamentoRepository.findByNomeDoClienteContainingIgnoreCase(nome);
-//  }
   
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
