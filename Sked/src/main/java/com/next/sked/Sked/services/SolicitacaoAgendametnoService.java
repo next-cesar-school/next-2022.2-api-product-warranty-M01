@@ -19,8 +19,8 @@ public class SolicitacaoAgendametnoService {
 	
 	@Transactional
 	public Agendamento solicitar(Agendamento agendamento) {
-		Assistencia assistencia = (Assistencia) assistenciaRepository.findAllById(agendamento.getAssistencias().getId());
-		agendamento.setAssistencias(assistencia);
+		Assistencia assistencia = (Assistencia) assistenciaRepository.findAllById(agendamento.getAssistencia().getId());
+		agendamento.setAssistencia(assistencia);
 		return agendamentoRepository.save(agendamento);
 	}
 

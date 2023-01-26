@@ -23,8 +23,9 @@ public class Agendamento {
 	
 	@EqualsAndHashCode.Include
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@NotEmpty(message = "Informe o nome do cliente")
 	private String nomeDoCliente;
 	
@@ -41,6 +42,6 @@ public class Agendamento {
 	private String aparelho;
 
 	@ManyToOne
-	private Assistencia assistencias;
+	private Assistencia assistencia;
 	
 }
